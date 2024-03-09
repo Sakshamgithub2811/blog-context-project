@@ -4,7 +4,7 @@ import Spinner from './Spinner';
 
 
 const Blogs = () => {
-  const { loading, posts } = useContext(AppContext); // Assuming posts are retrieved from the context
+  const { loading, posts } = useContext(AppContext); 
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Blogs = () => {
         ) : (
           posts.map((post) =>(
             <div key={post.id}>
-              <p>{post.title}</p>
+              <p className='text-3xl bg-slate-600'>{post.title}</p>
               <p>
                 By<span>{post.author}</span> on<span>{post.category}</span>
               </p>
@@ -27,7 +27,7 @@ const Blogs = () => {
               <div>
                 {
                   post.tags.map((tag,index)=>{
-                    return <span key={index}>(`#${tag}`)</span>
+                    return <span key={index}>{`#${tag}`}</span>
                   })
                 }
               </div>

@@ -39,9 +39,6 @@ export default function AppContextProvider({children}){
         fetchBlogPosts(page);
     }
 
-
-
-
     const value = {
         posts,
         setPosts,
