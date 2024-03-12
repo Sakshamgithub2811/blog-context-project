@@ -13,7 +13,7 @@ export default function AppContextProvider({children}){
 // add two more features dark mode and ltr and rtl:
 
 
-    async function fetchBlogPosts(page=1){
+    async function fetchBlogPosts(page=3){
         setLoading(true);
         let url = `${baseUrl}?page=${page}`;
         try{
