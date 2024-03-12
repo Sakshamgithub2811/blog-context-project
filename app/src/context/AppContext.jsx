@@ -9,7 +9,9 @@ export default function AppContextProvider({children}){
     const [loading,setLoading] = useState(false);
     const [posts,setPosts] = useState([]);
     const [page,setPage] = useState(1);
-    const [totalPages,setTotalPages] = useState(null);
+    const [totalPages,setTotalPages] = useState(7);
+
+// add two more features dark mode and ltr and rtl:
 
 
     async function fetchBlogPosts(page=1){

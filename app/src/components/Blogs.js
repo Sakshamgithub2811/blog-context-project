@@ -18,7 +18,7 @@ const Blogs = () => {
         ) : (
           posts.map((post) =>(
             <div key={post.id}>
-              <p className='text-3xl bg-slate-600'>{post.title}</p>
+              <p className=' text-xl'>{post.title}</p>
               <p>
                 By<span>{post.author}</span> on<span>{post.category}</span>
               </p>
