@@ -10,6 +10,7 @@ export default function AppContextProvider({children}){
     const [posts,setPosts] = useState([]);
     const [page,setPage] = useState(1);
     const [totalPages,setTotalPages] = useState(7);
+    const [darkMode,setDarkMode] = useState(false);
 
 // add two more features dark mode and ltr and rtl:
 
@@ -40,6 +41,17 @@ export default function AppContextProvider({children}){
         setPage(page);
         fetchBlogPosts(page);
     }
+    function  toggleDarkMode(){
+        setDarkMode(prevMode => !prevMode);
+        
+        const htmlElement = document.querySelector('html');
+        if (darkMode) {
+            htmlElement.classList.remove('dark');
+        } else {
+            htmlElement.classList.add('dark');
+        }
+
+    }
 
     const value = {
         posts,
@@ -51,7 +63,9 @@ export default function AppContextProvider({children}){
         totalPages,
         setTotalPages,
         fetchBlogPosts,
-        handlePageChange
+        handlePageChange,
+        darkMode,
+        toggleDarkMode
     };
 
     return (
