@@ -41,16 +41,9 @@ export default function AppContextProvider({children}){
         setPage(page);
         fetchBlogPosts(page);
     }
+
     function  toggleDarkMode(){
         setDarkMode(prevMode => !prevMode);
-        
-        const htmlElement = document.querySelector('html');
-        if (darkMode) {
-            htmlElement.classList.remove('dark');
-        } else {
-            htmlElement.classList.add('dark');
-        }
-
     }
 
     const value = {
@@ -70,7 +63,9 @@ export default function AppContextProvider({children}){
 
     return (
     <AppContext.Provider value={value}>
+        <div className={darkMode ? "dark":""}>
         {children}
+        </div>
     </AppContext.Provider>
     )
 
