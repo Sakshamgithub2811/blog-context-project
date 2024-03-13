@@ -5,11 +5,11 @@ import Spinner from './Spinner';
 
 const Blogs = () => {
   const { loading, posts } = useContext(AppContext); 
-
+  
   return (
-    <div className='w-11/12 max-w-[670px] py-3 flex flex-col gap-y-7 mt-[60px]'>
+    <div className='w-11/12 h-screen max-w-[670px] py-3 flex flex-col gap-y-7 mt-[60px] flex justify-content items-center'>
       {loading ? (
-        <Spinner />
+        <Spinner  />
       ) : (
         posts.length === 0 ? (
           <div>
