@@ -15,9 +15,15 @@ export default function AppContextProvider({children}){
 // add two more features dark mode and ltr and rtl:
 
 
-    async function fetchBlogPosts(page=1){
+    async function fetchBlogPosts(page=1,tag=null,category){
         setLoading(true);
-        let url = `${baseUrl}?page=${page}`;
+        let url = `${baseUrl}get-blogs?pages=${page}`;
+        if(tag){
+            url += `&tag=${tag}`;
+        }
+        if(category){
+            url +=``
+        }
         try{
             const result = await fetch(url);
             const data = await result.json();
