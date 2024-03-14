@@ -5,22 +5,25 @@ const Pagination = () => {
 
   const {page,handlePageChange,totalPages,darkMode,toggleDarkMode} = useContext(AppContext);
   return ( 
-    <div className='w-full flex justify-center items-center border py-2 '>
-      <div className='flex justify-between w-11/12 max-w-[670]' >
-       <div className='flex gap-x-5'>
-       {
+    <div className='w-full flex justify-center items-center border-2 fixed bottom-0 bg-white' >
+      <div className='flex justify-between w-11/12 max-w-[670px] py-2'>
+        <div className='flex gap-x-2'>
+        {
           page>1 &&
-          <button  className="rounded-md border p-x-4 p-y-2" onClick={()=>handlePageChange(page-1)} >
+          <button className=" border-2 px-2 rounded-md  p-x-4 p-y-2" onClick={()=>handlePageChange(page-1)} >
             Previous
           </button>
         }
         {
           page< totalPages &&
-          <button className="rounded-md border p-x-4 p-y-2" onClick={()=>handlePageChange(page+1)}>
+          <button className="border-2 px-2 rounded-md  p-x-4 p-y-2" onClick={()=>handlePageChange(page+1)}>
             Next
           </button>
         } 
        </div>
+
+        </div>
+       
 
         <p className='font-bold text-sm '>
           Page{page} of {totalPages}

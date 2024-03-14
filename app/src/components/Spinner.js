@@ -3,7 +3,7 @@ import React from 'react'
 const Spinner = () => {
   return (
     <div>
-        <div> waiting </div>
+        <div className='custom-loader '></div>
       
     </div>
   )
