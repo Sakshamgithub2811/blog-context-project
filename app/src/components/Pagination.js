@@ -19,7 +19,8 @@ const Pagination = () => {
           <button className="border-2 px-2 rounded-md  p-x-4 p-y-2" onClick={()=>handlePageChange(page+1)}>
             Next
           </button>
-        }
+        } 
+       </div>
 
         </div>
        
@@ -28,9 +29,9 @@ const Pagination = () => {
           Page{page} of {totalPages}
         </p>
 
-        <button onClick={toggleDarkMode} className={`bg-gray-200 dark:bg-gray-800 ${darkMode ? 'text-white' : 'text-black'}`}>
+        <button onClick={toggleDarkMode} className={`bg-gray-200 text-black dark:bg-gray-800 dark:text-white }`}>
           {darkMode ?"DRK":"LIT"  }
-          ${darkMode}
+         
    
         </button>
        
