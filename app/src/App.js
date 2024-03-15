@@ -16,11 +16,12 @@ fetchBlogPosts();
   },[])
 
   return (
-    <div className='w-full h-full flex flex-col justify-center items-center'>
-      <Header/>
-      <Blogs/>
-      <Pagination/>
-    </div>
+   <Routes>
+    <Routes path="/" element={<Home/>}/>
+    <Routes path="/blog/:blogId" element={<BlogPage/>}/>
+    <Routes path="/tags/:tag" element={<TagPage/>}/>
+    <Routes path="/categories/:categories" element={<CategoryPage/>}/>
+   </Routes>
   );
 }
 
